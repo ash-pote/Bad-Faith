@@ -1,0 +1,117 @@
+/* use of css styling from previous experience */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button:hover,
+input[type="radio"] {
+  cursor: pointer;
+}
+
+* {
+  font-size: 14px;
+}
+
+canvas {
+  display: block;
+}
+
+fieldset {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  background-color: rgba(
+    211,
+    211,
+    211,
+    0.8
+  ); /* use of rgba from previous experience */
+}
+
+#ui-container {
+  position: absolute;
+  padding: 16px;
+}
+
+#description-section {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  /* width: 100vw - 16px;
+  height: 100vh; */
+  background-color: rgba(
+    211,
+    211,
+    211,
+    1
+  ); /* use of rgba from previous experience */
+}
+
+#container {
+  padding: 16px;
+}
+
+a:visited {
+  color: black;
+}
+
+/* #order-slider {
+  border: 1px solid black;
+} */
+
+#slider-field {
+  height: 16px;
+  padding: 0 4px 0 4px;
+}
+
+#slider-field label {
+  font-size: 12px;
+  min-width: fit-content;
+}
+
+/* 1 - reference for styling sliders: https://blog.logrocket.com/creating-custom-css-range-slider-javascript-upgrades/ */
+/* slider */
+
+input[type="range"] {
+  /* 1 */
+  /* removing default appearance */ /* 1 */
+  -webkit-appearance: none; /* 1 */
+  appearance: none; /* 1 */
+  /* creating a custom design */
+  width: fit-content;
+  cursor: pointer;
+  outline: none; /* 1 */
+  border-radius: 15px; /* 1 */
+  /*  overflow: hidden;  remove this line*/
+
+  /* New additions */
+  height: 1px;
+  background: black;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  /* 1 */
+  /* removing default appearance */ /* 1 */
+  -webkit-appearance: none; /* 1 */
+  appearance: none; /* 1 */
+  /* creating a custom design */
+  height: 12px;
+  width: 12px;
+  background-color: black; /* 1 */
+  border-radius: 50%; /* 1 */
+  border: blue; /* 1 */
+}
+
+#delay-sliders fieldset {
+  height: fit-content;
+  padding-bottom: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/tone"></script>
+    <script src="https://unpkg.com/@tonejs/midi"></script>
+
+    <title>Bad Faith</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script src="libraries/p5.min.js"></script>
+  </head>
+
+  <!-- Use of HTML from previous experience-->
+  <body>
+    <section id="ui-container">
+      <button><a href="./description.html">Description</a></button>
+      <!-- 14.1 Understanding Inputs -->
+      <!-- 14.2 Understanding Inputs -->
+      <!-- 14.3 Understanding inputs (Radio) -->
+      <!-- 2: Get radio button values: -->
+      <form>
+        <fieldset>
+          <legend>Select synth:</legend>
+          <div>
+            <input type="radio" id="Piano" name="synth" value="0" checked />
+            <label for="Piano">Piano</label>
+          </div>
+
+          <div>
+            <input type="radio" id="Basic" name="synth" value="1" />
+            <label for="Basic">Basic</label>
+          </div>
+
+          <div>
+            <input type="radio" id="AMSynth" name="synth" value="2" />
+            <label for="AMSynth">AMSynth</label>
+          </div>
+
+          <div>
+            <input type="radio" id="fmSynth" name="synth" value="3" />
+            <label for="fmSynth">fmSynth</label>
+          </div>
+
+          <div>
+            <input type="radio" id="monoSynth" name="synth" value="4" />
+            <label for="monoSynth">monoSynth</label>
+          </div>
+
+          <div>
+            <input type="radio" id="MembraneSynth" name="synth" value="5" />
+            <label for="MembraneSynth">MembraneSynth</label>
+          </div>
+        </fieldset>
+      </form>
+
+      <!-- // 14.4 Slider: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/range -->
+      <div id="sliders">
+        <div id="order-slider">
+          <fieldset id="slider-field">
+            <input
+              type="range"
+              id="order"
+              value="1"
+              name="order"
+              min="1"
+              max="20"
+              step="1"
+            />
+            <label for="order"
+              >Ngram Size:<output id="ngramValue"> 1</output></label
+            >
+          </fieldset>
+        </div>
+
+        <div id="duration-slider">
+          <fieldset id="slider-field">
+            <input
+              type="range"
+              id="duration"
+              value="1"
+              name="duration"
+              min="0.4"
+              max="2"
+              step="0.1"
+            />
+            <label for="duration"
+              >Duration:<output id="durationValue"> 1</output></label
+            >
+          </fieldset>
+        </div>
+
+        <div id="delay-slider">
+          <fieldset id="slider-field">
+            <input
+              type="range"
+              id="delay"
+              value="1"
+              name="delay"
+              min="0.4"
+              max="5"
+              step="0.1"
+            />
+            <label for="delay">Delay:<output id="delayValue"> 1</output></label>
+          </fieldset>
+        </div>
+
+        <div id="delay-sliders">
+          <fieldset id="slider-field" class="delays">
+            <div>
+              <input
+                type="range"
+                id="delayR"
+                value="1"
+                name="delayR"
+                min="0.4"
+                max="5"
+                step="0.1"
+              />
+              <label for="delayR"
+                >DelayR:<output id="delayRValue"> 1</output></label
+              >
+            </div>
+
+            <div>
+              <input
+                type="range"
+                id="randomR"
+                value="1"
+                name="randomR"
+                min="0"
+                max="10"
+                step="1"
+              />
+              <label for="randomR"
+                >Random%:<output id="randomRValue"> 0</output></label
+              >
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      <div id="buttons">
+        <p>
+          <button id="generate">Start</button>
+          <button id="restart">Restart</button>
+        </p>
+        <button id="play">Play</button>
+      </div>
+    </section>
+
+    <script src="./markov.js"></script>
+    <script src="./functions.js"></script>
+    <script src="./visualization.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
