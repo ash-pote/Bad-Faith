@@ -68,6 +68,8 @@ function draw() {
   }
 
   updateSynth(); // Get radio button values & change synth if changed // see in functions.js
+  console.log(delayRSliderNum);
+  console.log(delaySliderNum);
 }
 
 ///////////////////////////////////////////////
@@ -87,10 +89,10 @@ function playNote() {
   // Slider Changes:
   ///////////////////////////
   // random delay variation:
-  //   let randomVal = random(0, 10);
-  //   if (randomVal < randomRSliderNum) {
-  //     delaySliderNum *= delayRSliderNum; //. delay of that note
-  //   }
+  // let randomVal = floor(random(randomRSliderNum, 10));
+  // if (randomVal > delayRSliderNum) {
+  //   delaySliderNum *= delayRSliderNum; //. delay of that note
+  // }
 
   let noteDuration = note.duration; // duration of current note
   noteDuration *= durationSliderNum; // duration of current note, get longer if the delay slider value goes up, and shorter if below 0
