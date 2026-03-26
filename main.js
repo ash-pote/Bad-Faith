@@ -76,7 +76,7 @@ function draw() {
 // Manual loop based on idx++:
 function playNote() {
   let note = resultData[noteIdx]; // select note from markov generated notes, according to noteIdx (for loop that works with constantly updating resultData, technique based on trial and error with a for loop)
-  // console.log(note);
+  console.log(note);
 
   // if a note delay is longer than 5, reduce it to 1. This is for other json files I tested such as plantasia
   if (note.delay > 5) {
@@ -94,12 +94,9 @@ function playNote() {
 
   let noteDuration = note.duration; // duration of current note
   noteDuration *= durationSliderNum; // duration of current note, get longer if the delay slider value goes up, and shorter if below 0
-  console.log(noteDuration);
 
   noteDelay = note.delay; // delay of current note
   noteDelay *= delaySliderNum; // delay multiplied the delay slider value
-  console.log("note delay: " + noteDelay);
-  console.log("---------------------------");
 
   ///////////////////////////
   // For manual delay:
@@ -142,7 +139,6 @@ function generatePlayMarkov() {
     // interval is specific note delay
     if (currentTime - previousTime > interval) {
       previousTime = currentTime; // update for manual delay technique
-      //   console.log("note played at: " + previousTime);
       playNote();
     }
   }

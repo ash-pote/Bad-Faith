@@ -93,14 +93,10 @@ function markovIt() {
   // else start with the first ngram from the original song
   if (resultArr.length > 0) {
     lastGram = resultArr; // last ngram in generated song if already generated once
-    // console.log("last gram");
-    // console.log(lastGram);
     startTime = resultData[resultData.length - 1].time;
   } else {
     // start with first ngram in original song if not generated once yet
     lastGram = newMusicArr.slice(0, order); // 3 // Modified to use array // 4: Slice
-    console.log("last gram: ");
-    console.log(lastGram);
     startTime = lastGram[lastGram.length - 1].time;
   }
 
@@ -120,13 +116,6 @@ function markovIt() {
       currentGramName += currentGram[k].name + " ";
     }
   }
-  // console.log("------------------------------");
-  // console.log("------------------------------");
-  // console.log("starting Markov ngram: ");
-  // console.log(currentGram);
-  // console.log(currentGramName);
-  // console.log("------------------------------");
-  // console.log("------------------------------");
   ////////////////////////
 
   // result of generation
@@ -136,7 +125,6 @@ function markovIt() {
   // Modified to use a short 'song' length so each markov generated in the draw function isn't unnecessarily long. This allows for changing the the ngram order and playing quickly.
   for (let i = 0; i < songLength; i++) {
     // console.log("current result: " + result); // will change each loop
-    // console.log("current gram name: " + currentGramName); // will change each loop
 
     // get possibilities of current ngram
     let possibilities = ngrams[currentGramName]; // 3: Coding Train Markov Chains Tutorial
@@ -175,10 +163,6 @@ function markovIt() {
     /////////////////////////////////
     // Add next ngram data to resultArr
     let math = startTime + next.timeAfter; // + delay
-    // console.log("Start time: " + startTime);
-    // console.log("delay: " + next.timeAfter);
-    // console.log("time: " + math);
-    // console.log("-------------------");
 
     // if startTime exists:
     if (startTime)
@@ -194,15 +178,12 @@ function markovIt() {
 
     // add note name to result
     result += next.name + " "; // 3: Coding Train Markov Chains Tutorial // modified to use the ngram name isntead of 'next'
-    // console.log("result");
-    // console.log(result);
 
     // convert result back into array
     // Clean -------------------------------
     // convert result back into array
     let resultClean = result.split(" "); // 6: Split, separate into array accordding to spacing between note names
     resultClean.pop(); // remove last array value
-    // console.log("Cleaned result: " + resultClean);
     // --------------------------------------
 
     // change currentGram to the last ngram in the result text
@@ -211,18 +192,11 @@ function markovIt() {
       resultClean.length - order,
       resultClean.length,
     );
-    // console.log("resultArr");
-    // console.log(resultArr);
 
     // convert back into ngram string name
     currentGramName = "";
     for (let k = 0; k < resultArr.length; k++) {
       currentGramName += resultArr[k] + " ";
     }
-    // console.log("current gram name");
-    // console.log(currentGramName);
   }
-
-  // console.log("result data: "); // entire markov result
-  // console.log(resultData);
 }

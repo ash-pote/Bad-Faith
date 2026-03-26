@@ -77,7 +77,6 @@ let randomRSliderNum = 1; // random chance value // default 1
 const randomROutput = document.querySelector("#randomRValue"); // 14.4 Slider // use of querySelector from previous experience
 // 1: Get input value
 randomRInput.addEventListener("input", function () {
-  console.log("changed");
   randomRSliderNum = parseFloat(randomRInput.value); // 1: Parse as a number
   randomROutput.textContent = " " + randomRSliderNum; // 14.4 Slider // updates html
 });
