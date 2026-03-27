@@ -43,7 +43,7 @@ function visualFFT() {
 
   // 18 // do something for every level we get
   for (let i = 0; i < levels.length; i++) {
-    push(); // 18 // to keep values contained & make sure they don't interfer with each other
+    push(); // 18 // to keep values contained & make sure they don't interfere with each other
     let binMapped = map(levels[i], -100, 0, 0, 50); // 18 // decibal sound levels for each frequency, can change input numbers
     levels[i] += 2;
 
