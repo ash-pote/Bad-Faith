@@ -1,13 +1,14 @@
 ///////////////////////////////////////////////
 // Update order number value from slider
 ///////////////////////////////////////////////
-const orderInput = document.querySelector("#order"); // 1 // querySelector from previous experience
+const orderInput = document.querySelector("#order"); // 1 // querySelector from previous experience // gets the html element with id
 let order = 1; // length of ngram // default 1
 let prevOrder; // previous order value
 let orderInChange = false; // whether order is in process of being changed
-const ngramNumOutput = document.querySelector("#ngramValue"); // 14.4 Slider // use of querySelector from previous experience
+const ngramNumOutput = document.querySelector("#ngramValue"); // 14.4 Slider // use of querySelector from previous experience // gets the html element with id
 
 // 1: Get input value:
+// listens for event change of type 'input' on orderInput; // event listener from previous experience
 orderInput.addEventListener("input", function () {
   console.log("changed");
   order = parseFloat(orderInput.value); // 1: Parse as a number
@@ -37,10 +38,11 @@ orderInput.addEventListener("input", function () {
 ///////////////////////////////////////////////
 // Update delay number value from slider
 ///////////////////////////////////////////////
-const delayInput = document.querySelector("#delay"); // 1 // use of querySelector from previous experience
+const delayInput = document.querySelector("#delay"); // 1 // use of querySelector from previous experience // gets the html element with id
 let delaySliderNum = 1; // delay value // default 1
-const delayOutput = document.querySelector("#delayValue"); // 14.4 Slider // use of querySelector from previous experience
+const delayOutput = document.querySelector("#delayValue"); // 14.4 Slider // use of querySelector from previous experience // gets the html element with id
 // 1: Get input value:
+// listens for event change of type 'input' on delayInput; // event listener from previous experience
 delayInput.addEventListener("input", function () {
   delaySliderNum = parseFloat(delayInput.value); // 1: Parse as a number
   delayOutput.textContent = " " + delaySliderNum; // 14.4 Slider // updates html
@@ -49,10 +51,11 @@ delayInput.addEventListener("input", function () {
 ///////////////////////////////////////////////
 // Update duration number value from slider
 ///////////////////////////////////////////////
-const durationInput = document.querySelector("#duration"); // 1 // querySelector from previous experience
+const durationInput = document.querySelector("#duration"); // 1 // querySelector from previous experience // gets the html element with id
 let durationSliderNum = 1; // duration value // default 1
-const durationOutput = document.querySelector("#durationValue"); // 14.4 Slider // use of querySelector from previous experience
+const durationOutput = document.querySelector("#durationValue"); // 14.4 Slider // use of querySelector from previous experience // gets the html element with id
 // 1: Get input value
+// listens for event change of type 'input' on delayInput; // event listener from previous experience
 durationInput.addEventListener("input", function () {
   durationSliderNum = parseFloat(durationInput.value); // 1: Parse as a number
   durationOutput.textContent = " " + durationSliderNum; // 14.4 Slider // update html
@@ -82,13 +85,15 @@ durationInput.addEventListener("input", function () {
 ///////////////////////////////////////////////
 // Tone.js Starting Audio
 ///////////////////////////////////////////////
-// 10: Tone.js Starting Audio: using an event listner to start play
+// 10: Tone.js Starting Audio: using an event listener to start play
 // attach a click listener to a play button
+// listens for event change of type 'click' on element with id 'play'; // event listener from previous experience
 document.querySelector("#play").addEventListener("click", async () => {
   play = true; // change play to true, so other code only works when true
 });
 
 // 10: Tone.js Starting Audio:
+// listens for event change of type 'click' on element with id 'generate'; // event listener from previous experience
 document.querySelector("#generate").addEventListener("click", async () => {
   await Tone.start(); // 10: Tone.js Starting Audio // waits for tone.js to start before anything else, because browsers need a click function before sound can work
   console.log("audio is ready"); // 10: Tone.js Starting Audio
@@ -97,6 +102,7 @@ document.querySelector("#generate").addEventListener("click", async () => {
   start = true; // main.js draw functionality waits for start to be true before starting
 });
 
+// listens for event change of type 'click' on element with id 'restart'; // event listener from previous experience
 document.querySelector("#restart").addEventListener("click", async () => {
   window.location.reload(); // 11: Reload // reload entire window when button pressed
 });
@@ -105,6 +111,7 @@ document.querySelector("#restart").addEventListener("click", async () => {
 // Tone.js Instruments:
 ///////////////////////////////////////////////
 // 12: Tone.js instruments: // 13: Tone.js Docs:
+// creates a sampler insturment based on inputs:
 const sampler = new Tone.Sampler({
   urls: {
     C4: "C4.mp3",
@@ -131,10 +138,10 @@ let instruments = [sampler, basic, AMSynth, fmSynth, monoSynth, MembraneSynth];
 
 // ---------------------------------------------------------------------
 // Update Synth:
-const synthInput = document.querySelector("#order"); // use of querySelector from previous experience
+const synthInput = document.querySelector("#order"); // use of querySelector from previous experience // gets the html element with id
 let synth = instruments[0]; // choose synth // defualt = 0
 
-const radioButtons = document.querySelectorAll('input[name="synth"]'); // 2: Get radio button values
+const radioButtons = document.querySelectorAll('input[name="synth"]'); // 2: Get radio button values where the input name is 'synth'
 let selectedSize = 0; // 2: Get radio button values
 
 // Most below code from reference 2: Get radio button values:
@@ -149,19 +156,6 @@ function updateSynth() {
 
   synth = instruments[selectedSize]; // choose synth // modified
 }
-
-///////////////////////////////////////////////
-// Full Screen
-// https://p5js.org/reference/p5/fullscreen/
-///////////////////////////////////////////////
-// function mousePressed() {
-//   // conditions to check if mouse click is within canvas
-//   if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
-//     let fs = fullscreen();
-//     // toggle
-//     fullscreen(!fs);
-//   }
-// }
 
 ///////////////////////
 // Window Resize
