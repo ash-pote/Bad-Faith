@@ -45,7 +45,7 @@ fieldset {
 #description-section {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 100%;
   /* width: 100vw - 16px;
   height: 100vh; */
   background-color: rgba(
@@ -114,4 +114,23 @@ input[type="range"]::-webkit-slider-thumb {
   display: flex;
   flex-direction: column;
   align-items: start;
+}
+
+/* Description ---------------------------------- */
+#left {
+  /* width: 50vw; */
+  padding-right: 24px;
+}
+
+#left div,
+#right div {
+  max-width: 500px;
+}
+
+#text {
+  display: flex;
+}
+
+#text p {
+  font-size: 16px;
 }

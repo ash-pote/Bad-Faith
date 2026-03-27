@@ -20,7 +20,130 @@
           <button><a href="./index.html">Back</a></button>
         </nav>
         <hr />
-        <p>Description</p>
+        <h1>Description</h1>
+
+        <div id="text">
+          <section id="left">
+            <div>
+              <h2>What I Made:</h2>
+              <p>
+                Aiming to explore the process of network bending, as seen in
+                Daniel Manz project
+                <a href="https://danielmanz.com/brave">‘Brave’</a>, I created a
+                generative music project using Markov chains. While the program
+                generates sound based on the ‘training data’ of a song, the
+                project can also be considered as critical software as I’m
+                exploring how small language models can be used as an
+                alternative to AI.
+              </p>
+              <h2>How I Made It:</h2>
+              <p>
+                Markov Chains: Following a
+                <a href="https://www.youtube.com/watch?v=eGFJ8vugIWA"
+                  >Coding Train Markov Chains tutorial</a
+                >, I used the code as my main technique for generating the music
+                notes. As the tutorial used sentences as training data, I
+                modified the code to use music notes from a midi json file.
+                Overall the technique is the same as in Shiffman’s tutorial,
+                where the training data is converted into ngrams, and then used
+                to predict the next likely notes. Where the higher ngram number
+                results in music notes more closely resembling the original
+                song. <br /><br />
+                Song input & Midi: Claire de lune, by Claude Debussy, 1905. I
+                downloaded the Midi file from
+                <a href="https://bitmidi.com/debussy-clair-de-lune-mid"
+                  >Bitmidi</a
+                >
+                and converted it into the correct json format on the
+                <a href="https://tonejs.github.io/Midi/">Tone.js Converter</a>.
+                I used the
+                <a
+                  href="https://github.com/Tonejs/Midi/blob/master/examples/load.html"
+                  >Tone.js midi repository</a
+                >
+                to understand how to work with the json data.
+                <br /><br />
+
+                Tone.js: I incorporated the Tone.js library as a method to work
+                with synths. I looked at various resources to understand how to
+                work with the library, including the
+                <a href="https://tonejs.github.io/">Getting Started page</a>,
+                <a href="https://tonejs.github.io/docs/15.1.22/index.html"
+                  >API</a
+                >
+                and <a href="https://tonejs.github.io/examples/">Examples</a>.
+                All synths are directly from Tone.js Examples while the Piano
+                Synth is a sampler found on
+                <a href="https://github.com/Tonejs/Tone.js"> Tone.js GitHub</a>.
+                <br /><br />
+                FFT Visualization (Animated Circles): Using a combination of
+                predominantly Bardin’s
+                <a href="https://www.youtube.com/watch?v=ZLT8N824zDw">
+                  Audio Spectrum Meter</a
+                >
+                and
+                <a
+                  href="https://editor.p5js.org/tomthecollins/sketches/Gk7kFdV9o"
+                >
+                  tomethecollins code</a
+                >
+                , I used FFT levels to animate my circles. <br /><br />
+                ‘Network Bending’: Based on Daniel Manz’s project
+                <a href="https://danielmanz.com/brave">‘Brave’</a>, I created a
+                simpler version with Markov Chains by including functionality to
+                change the ngram value, note duration and delay.
+              </p>
+            </div>
+          </section>
+          <section id="right">
+            <h2>Why I Made It :</h2>
+            <div>
+              <p>
+                Beginning to work on this project I looked into Sarte’s writing
+                on the social theory of Serialty, and related concepts such as
+                ‘bad faith’ and the Practico Inert, comparing how these concepts
+                can be related to current AI technology. Specifically how the
+                Practico Inert explains how the material we produce can result
+                in rigid systems which eventually disadvantage us. Such as how
+                the system of industrialisation has had many positive benefits,
+                while at the same time resulting as a major contribution to
+                climate change
+                <a
+                  href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803100341591"
+                  >(Oxford Dictionary)</a
+                >. The use of AI can also be related to Sarte’s opinion that
+                these systems also shape us, where because of their size, it can
+                be impossible to opt out of. This can be seen in the pressure to
+                use AI in order to keep up with the labour market
+                <a
+                  href="https://journals.sagepub.com/doi/10.1177/26317877221109282"
+                  >(Fleming, 2022)</a
+                >, while at the same time having a negative effect on our
+                cognitive and creative capacities.
+              </p>
+              <p>
+                While these concepts were difficult to visually communicate, I
+                looked into the use of small language models and network bending
+                as processes opposed to the rigid systems of dominant AI
+                technology. Using Mark Sample’s
+                <a
+                  href="https://samplereality.com/2025/07/18/the-poetics-and-power-of-small-language-models/"
+                  >essay</a
+                >
+                on SLM’s and Daniel Manz use of Network Bending as an "active
+                divergence"<a href="https://danielmanz.com/brave">(Manz)</a>
+                from AI.
+              </p>
+              <p>
+                As someone with very little experience working with music, the
+                project was interesting to explore how I could use smaller
+                generative methods to create music. While having full control
+                over the inputs and methods, compared to using AI software that
+                relies on large, and mostly undocumented, datasets.
+              </p>
+            </div>
+          </section>
+        </div>
       </div>
     </section>
   </body>

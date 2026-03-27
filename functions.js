@@ -63,23 +63,23 @@ durationInput.addEventListener("input", function () {
 ///////////////////////////////////////////////
 // Update delayR & random number value from slider
 ///////////////////////////////////////////////
-const delayRInput = document.querySelector("#delayR"); // 1 // use of querySelector from previous experience
-let delayRSliderNum = 1; // delayR value // default 1
-const delayROutput = document.querySelector("#delayRValue"); // 14.4 Slider // use of querySelector from previous experience
-// 1: Get input value
-delayRInput.addEventListener("input", function () {
-  delayRSliderNum = parseFloat(delayRInput.value); // 1: Parse as a number
-  delayROutput.textContent = " " + delayRSliderNum; // 14.4 Slider // updates html
-});
+// const delayRInput = document.querySelector("#delayR"); // 1 // use of querySelector from previous experience
+// let delayRSliderNum = 1; // delayR value // default 1
+// const delayROutput = document.querySelector("#delayRValue"); // 14.4 Slider // use of querySelector from previous experience
+// // 1: Get input value
+// delayRInput.addEventListener("input", function () {
+//   delayRSliderNum = parseFloat(delayRInput.value); // 1: Parse as a number
+//   delayROutput.textContent = " " + delayRSliderNum; // 14.4 Slider // updates html
+// });
 
-const randomRInput = document.querySelector("#randomR"); // 1 // use of  querySelector from previous experience
-let randomRSliderNum = 1; // random chance value // default 1
-const randomROutput = document.querySelector("#randomRValue"); // 14.4 Slider // use of querySelector from previous experience
-// 1: Get input value
-randomRInput.addEventListener("input", function () {
-  randomRSliderNum = parseFloat(randomRInput.value); // 1: Parse as a number
-  randomROutput.textContent = " " + randomRSliderNum; // 14.4 Slider // updates html
-});
+// const randomRInput = document.querySelector("#randomR"); // 1 // use of  querySelector from previous experience
+// let randomRSliderNum = 1; // random chance value // default 1
+// const randomROutput = document.querySelector("#randomRValue"); // 14.4 Slider // use of querySelector from previous experience
+// // 1: Get input value
+// randomRInput.addEventListener("input", function () {
+//   randomRSliderNum = parseFloat(randomRInput.value); // 1: Parse as a number
+//   randomROutput.textContent = " " + randomRSliderNum; // 14.4 Slider // updates html
+// });
 
 ///////////////////////////////////////////////
 // Tone.js Starting Audio

@@ -68,8 +68,8 @@ function draw() {
   }
 
   updateSynth(); // Get radio button values & change synth if changed // see in functions.js
-  console.log(delayRSliderNum);
-  console.log(delaySliderNum);
+  // console.log(delayRSliderNum);
+  // console.log(delaySliderNum);
 }
 
 ///////////////////////////////////////////////
